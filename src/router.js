@@ -7,6 +7,7 @@ import what from './views/what.vue'
 import how from './views/how.vue'
 import why from './views/why.vue'
 import who from './views/who.vue'
+import gallery from './views/gallery.vue'
 
 // 要告诉 vue 使用 vueRouter
 Vue.use(VueRouter)
@@ -33,6 +34,10 @@ const routes = [
   {
     path: '/who',
     component: who,
+  },
+  {
+    path: '/gallery',
+    component: gallery,
   },
   // 重定向，因为首次进入页面时，它的路径是 ‘/’。
   {

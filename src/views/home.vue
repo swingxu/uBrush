@@ -10,7 +10,9 @@
                       :prevent-white-space="true"
                       :show-remove-button="false">
     </my-image-cropper>
-    <button @click="croppa.remove()">REMOVE</button>
+    <button @click="myCroppa.remove()">REMOVE</button>
+    <button @click="uploadCroppedImage('image/jpeg')">Upload JPEG</button>
+
   </div>
 </template>
 
@@ -21,10 +23,18 @@ Vue.use(Croppa, { componentName: 'my-image-cropper' });
 
 export default {
   name: 'home',
+  data: function() {
+		return {
+      croppa: {},
+      dataUrl: ''		
+    }
+  },
   methods: {
     uploadCroppedImage() {
       this.myCroppa.generateBlob(
         blob => {
+          var url = URL.createObjectURL(blob)
+          console.log(url)
           // write code to upload the cropped image file (a file is a blob)
         },
         'image/jpeg',
