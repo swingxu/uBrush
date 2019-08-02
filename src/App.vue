@@ -15,7 +15,10 @@
         </router-link>
         <router-link to='/who' class = 'bm-item-list'>
           <a id="about"><span> Who </span></a>
-      </router-link>
+        </router-link>
+        <router-link to='/gallery' class = 'bm-item-list'>
+          <a id="gallery"><span> gallery </span></a>
+        </router-link>
       </Slide>
       <main id="page-wrap">
           <router-view></router-view>
@@ -35,13 +38,23 @@ export default {
 </script>
 
 <style>
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+#page-wrap{
+  z-index: -1;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 .bm-menu {
   height: 100%; /* 100% Full-height */
